@@ -1,0 +1,29 @@
+void setup() {
+  // put your setup code here, to run once:
+  for (int i = 0; i <= 7; i++) {
+    // For dongusuyle pinleri cikis yapıyoruz
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop() {
+  // Tum ledleri ileri yönde ve geri yönde 50 milisaniye yakıp söndürüyoruz
+  ileriDogruLedYak();
+  geriDogruLedYak();
+}
+
+void ileriDogruLedYak() {
+  for (int i = 0; i <= 7; i++) {
+    digitalWrite(i, HIGH);
+    delay(50);
+    digitalWrite(i, LOW);
+  }  
+}
+
+void geriDogruLedYak() {
+  for (int j = 7; j >= 0; j--) {
+    digitalWrite(j, HIGH);
+    delay(50);
+    digitalWrite(j, LOW);
+  }  
+}
