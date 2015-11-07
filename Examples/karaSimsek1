@@ -1,0 +1,22 @@
+void setup() {
+  for (int i = 0; i <= 7; i++) {
+    // For dongusuyle pinleri cikis yapıyoruz
+    pinMode(i, OUTPUT);
+  }
+}
+
+void loop() {
+  // Tum ledleri ileri yönde 50 milisaniye yakıp söndürüyoruz
+  for (int i = 0; i <= 7; i++) {
+    digitalWrite(i, HIGH);
+    delay(50);
+    digitalWrite(i, LOW);
+  }
+
+  // Tum ledleri geri yonde 50 milisaniye yakıp sonduruyoruz
+  for (int j = 7; j >= 0; j--) {
+    digitalWrite(j, HIGH);
+    delay(50);
+    digitalWrite(j, LOW);
+    }
+}
