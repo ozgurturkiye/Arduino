@@ -1,5 +1,4 @@
 void setup() {
-  // put your setup code here, to run once:
   for (int i = 0; i <= 7; i++) {
     // For dongusuyle pinleri cikis yapıyoruz
     pinMode(i, OUTPUT);
