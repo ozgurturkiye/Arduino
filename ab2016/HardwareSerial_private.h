@@ -110,10 +110,10 @@ void HardwareSerial::_rx_complete_irq(void)
     // just before the tail (meaning that the head would advance to the
     // current location of the tail), we're about to overflow the buffer
     // and so we don't write the character or advance the head.
+    gpsKutuphane(c);  //Bizim tanımladığımız kutuphane
     if (i != _rx_buffer_tail) {
       _rx_buffer[_rx_buffer_head] = c;
       _rx_buffer_head = i;
-      gpsKutuphane(c);
     }
   } else {
     // Parity error, read byte but discard it
