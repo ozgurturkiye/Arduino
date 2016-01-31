@@ -1,9 +1,10 @@
 enum gps { DOLAR_BEKLE, G1_BEKLE, P_BEKLE, G2_BEKLE, L1_BEKLE, L2_BEKLE, VIRGUL_BEKLE, YIRMIALTI_KARAKTER_AL };
 
-enum gps konumDurumu = DOLAR_BEKLE;
+enum gps konumDurum = DOLAR_BEKLE;
 
 char konumVeri[27] = {0};
 char konumVeriCounter = 0;
+
 
 void gpsKutuphane(unsigned char karakter) {
   switch (konumDurum) {
@@ -20,17 +21,17 @@ void gpsKutuphane(unsigned char karakter) {
       break;
 
     case G2_BEKLE:
-      if ( karakter == '' ) konumDurum = L1_BEKLE;
+      if ( karakter == 'G' ) konumDurum = L1_BEKLE;
       else konumDurum = DOLAR_BEKLE;
       break;
 
     case L1_BEKLE:
-      if ( karakter == '' ) konumDurum = L2_BEKLE;
+      if ( karakter == 'L' ) konumDurum = L2_BEKLE;
       else konumDurum = DOLAR_BEKLE;
       break;
 
     case L2_BEKLE:
-      if ( karakter == '' ) konumDurum = VIRGUL_BEKLE;
+      if ( karakter == 'L' ) konumDurum = VIRGUL_BEKLE;
       else konumDurum = DOLAR_BEKLE;
       break;
 
@@ -41,12 +42,12 @@ void gpsKutuphane(unsigned char karakter) {
     case YIRMIALTI_KARAKTER_AL:
       if ( konumVeriCounter < 26 ) konumVeri[konumVeriCounter++] = karakter;
       else {
-        konumVeriConuter = 0;
+        konumVeriCounter = 0;
         konumDurum = DOLAR_BEKLE;
       }
       break;
     default:
-      konuDurum = DOLAR_BEKLE;
+      konumDurum = DOLAR_BEKLE;
       break;
   }
 }
