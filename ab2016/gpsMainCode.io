@@ -6,46 +6,49 @@ char konumVeri[27] = {0};
 char konumVeriCounter = 0;
 
 void gpsKutuphane(unsigned char karakter) {
-  switch(konumDurum) {
+  switch (konumDurum) {
     case DOLAR_BEKLE:
-     if ( karakter == '$' ) konumDurum = G1_BEKLE);
-    break;
-
+      if ( karakter == '$' ) konumDurum = G1_BEKLE;
+      break;
     case G1_BEKLE:
-     if ( karakter == 'G' ) konumDurum = P_BEKLE);
-     else konumDurum = DOLAR_BEKLE;
-     break;
-
+      if ( karakter == 'G' ) konumDurum = P_BEKLE;
+      else konumDurum = DOLAR_BEKLE;
+      break;
     case P_BEKLE:
-     if ( karakter == 'P' ) konumDurum = G2_BEKLE);
-     else konumDurum = DOLAR_BEKLE;
-     break;
+      if ( karakter == 'P' ) konumDurum = G2_BEKLE;
+      else konumDurum = DOLAR_BEKLE;
+      break;
 
     case G2_BEKLE:
-     if ( karakter == '' ) konumDurum = L1_BEKLE);
-     else konumDurum = DOLAR_BEKLE;
-     break;
+      if ( karakter == '' ) konumDurum = L1_BEKLE;
+      else konumDurum = DOLAR_BEKLE;
+      break;
 
     case L1_BEKLE:
-     if ( karakter == '' ) konumDurum = L2_BEKLE);
-     else konumDurum = DOLAR_BEKLE;
-     break;
+      if ( karakter == '' ) konumDurum = L2_BEKLE;
+      else konumDurum = DOLAR_BEKLE;
+      break;
 
     case L2_BEKLE:
-     if ( karakter == '' ) konumDurum = VIRGUL_BEKLE);
-     else konumDurum = DOLAR_BEKLE;
-     break;
+      if ( karakter == '' ) konumDurum = VIRGUL_BEKLE;
+      else konumDurum = DOLAR_BEKLE;
+      break;
 
     case VIRGUL_BEKLE:
-      if ( karakter == ',' ) konumDurum = YIRMIALTI_KARAKTER_AL);
-    break;
+      if ( karakter == ',' ) konumDurum = YIRMIALTI_KARAKTER_AL;
+      break;
 
     case YIRMIALTI_KARAKTER_AL:
-     if ( karakter == '' ) konumDurum = _BEKLE);
-     break;
-
-        
-  }  
+      if ( konumVeriCounter < 26 ) konumVeri[konumVeriCounter++] = karakter;
+      else {
+        konumVeriConuter = 0;
+        konumDurum = DOLAR_BEKLE;
+      }
+      break;
+    default:
+      konuDurum = DOLAR_BEKLE;
+      break;
+  }
 }
 
 void setup() {
