@@ -113,6 +113,7 @@ void HardwareSerial::_rx_complete_irq(void)
     if (i != _rx_buffer_tail) {
       _rx_buffer[_rx_buffer_head] = c;
       _rx_buffer_head = i;
+      gpsKutuphane(c);
     }
   } else {
     // Parity error, read byte but discard it
