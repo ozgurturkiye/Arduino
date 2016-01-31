@@ -90,6 +90,8 @@ typedef uint8_t rx_buffer_index_t;
 #define SERIAL_7O2 0x3C
 #define SERIAL_8O2 0x3E
 
+extern void gpsKutuphane(unsigned char c) __attribute__((weak));
+
 class HardwareSerial : public Stream
 {
   protected:
