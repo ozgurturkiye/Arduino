@@ -10,12 +10,12 @@
 #define CD 6
 
 /*
- * ARDUINO            NRF905
- * __________________________
- * 13(SCK)        -->  SCK 
- * 12(MISO)       -->  MISO 
- * 11(MOSI)       -->  MOSI 
- * 10(SS veya SCN)-->  SCN
+ * ARDUINO              NRF905
+ * ______________________________
+ * 13(SCK)              -->  SCK 
+ * 12(MISO)             -->  MISO 
+ * 11(MOSI)             -->  MOSI 
+ * Optional(SS veya SCN)-->  SCN
  * 
  * 
  */
