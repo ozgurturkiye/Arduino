@@ -6,7 +6,7 @@
 #define TRX_CE 3  // Transmitter or receiver mode(not standby, sleep etc.)
 #define DR 4      // Data ready
 #define CSN 5     // SPI chip select(active low)
-#define PWR 6     // In case of use power down mode (0 is power down, 1 is power up), spi stays open during all of these.
+//#define PWR 6     // In case of use power down mode (0 is power down, 1 is power up), spi stays open during all of these.
 #define CD 6
 
 /*
