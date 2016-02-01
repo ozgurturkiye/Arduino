@@ -195,7 +195,7 @@ void loop() {
   digitalWrite(CSN, HIGH);
 
   // Wait if a carrier signal detected on air
-  while(digitalRead(CD));
+  while(digitalRead(DR));
   // Start transmission
   digitalWrite(TRX_CE, HIGH);
   // Enter TX mode
