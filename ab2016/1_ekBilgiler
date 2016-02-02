@@ -8,6 +8,10 @@ http://www.makeuseof.com/tag/meet-arduino-killer-esp8266/   --> Mode mcu kullan�
   -sudo nano /etc/group
   -Daha sonra "tty:x:5:KULLANICI_ADI" şeklinde düzenliyoruz.
 
+**Sensör verilerini online olarak(ve grafik üzerinde) görüntüleyebilmek için kullanılacak web sitesi.
+  - https://thingspeak.com/   
+  -thinkspeak kütüphanesini indirmek gerekiyor adress. - https://github.com/mathworks/thingspeak-arduino
+  
 
 
 ESP İÇİN;
