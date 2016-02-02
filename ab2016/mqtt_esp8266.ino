@@ -37,6 +37,8 @@ PubSubClient client(espClient);
 long lastMsg = 0;
 char msg[50];
 int value = 0;
+float gazRandomNumber;
+char charGazRandomNumber[5];
 
 
 void setup_wifi() {
@@ -88,7 +90,10 @@ void reconnect() {
     if (client.connect("ESP8266Client")) {
       Serial.println("connected");
       // Once connected, publish an announcement...
-      client.publish("outTopic", "OKAN-OZGUR");
+      gazRandomNumber = random(-1.0,1.0);
+      String(gazRandomNumber).toCharArray(charGazRandomNumber,5);
+      Serial.println(gazRandomNumber);
+      client.publish("/arduino2/oob", charGazRandomNumber);
       // ... and resubscribe
       client.subscribe("/arduino2");
     } else {
@@ -96,7 +101,7 @@ void reconnect() {
       Serial.print(client.state());
       Serial.println(" try again in 5 seconds");
       // Wait 5 seconds before retrying
-      delay(5000);
+      delay(500);
     }
   }
 }
