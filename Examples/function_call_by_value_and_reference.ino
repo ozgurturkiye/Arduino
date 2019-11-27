@@ -10,6 +10,7 @@ int call_by_value(int x, int y, int z) {
   z = 700;  
 }
 
+// &z is a address of third parameter
 int call_by_reference(int x, int y, int &z) {
   x = 101;
   y = 102;
