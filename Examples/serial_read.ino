@@ -14,11 +14,13 @@ void loop() {
     // say what you got:
     Serial.print("I received: ");
     Serial.println(my_char);
+    
+    // If incoming data is 'A' light ON :
     if (my_char == 65) {
       Serial.println(my_char, DEC);
       digitalWrite(LED_BUILTIN, HIGH);
     }
-    
+    // If incoming data is 'B' light OFF :
     if (my_char == 66) {
       Serial.println(my_char, DEC);
       digitalWrite(LED_BUILTIN, LOW);
